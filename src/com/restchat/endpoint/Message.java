@@ -93,7 +93,7 @@ public class Message {
 			String userid = UserSession.getUserId(sessionToken);
 			JSONObject messageDetails = MessageUtil.parseAndGetMessageDetails(message);
 			MessageUtil.validateAndPrepareMessage(userid, messageDetails);
-			if (!isGroup) {
+			if (isGroup==null||!isGroup) {
 				messageBuffer.postMessage(receiverId, messageDetails);
 			} else {
 				messageGroupBuffer.postMessage(receiverId, messageDetails);
