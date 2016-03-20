@@ -17,11 +17,15 @@ public class UserSession {
 		private static final Map<String, String> userSession = new HashMap<String, String>();
 	}
 
-	public static String login(String userid) {
+	public static String login(String userid) throws ChatException {
+		if(userid!=null){
 		// perform login logic
 		String sessionToken = UUID.randomUUID().toString();
 		SingletonHelper.userSession.put(sessionToken, userid);
 		return sessionToken;
+		}else{
+			throw new ChatException(ChatExceptionCodes.USERNAME_MISSING_MSG, ChatExceptionCodes.USERNAME_MISSING_CODE);
+		}
 	}
 
 	public static String getUserId(String sessionToken) throws ChatException {

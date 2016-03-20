@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 public class MessageBufferImpl implements Message{
 	
+	
 	private Map<String, JSONArray> messageBuffer=new HashMap<String, JSONArray> ();
 	private static JSONArray empty=new JSONArray();
 
