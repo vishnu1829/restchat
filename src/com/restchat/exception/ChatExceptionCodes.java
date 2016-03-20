@@ -22,5 +22,7 @@ public interface ChatExceptionCodes {
 	public int INVALID_MESSAGE_CODE = 40003;
 	public String INVALID_SENDERID_MSG = "invalid senderId ";
 	public int INVALID_SENDERID_CODE = 40004;
+	public String INVALID_GROUPID_MSG = "invalid groupId ";
+	public int INVALID_GROUPID_CODE = 40005;
 
 }
